@@ -1,0 +1,591 @@
+:root {
+    --primary: #6366f1;
+    --accent: #a855f7;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
+.dark-mode {
+    --bg: #0f172a;
+    --glass: rgba(30, 41, 59, 0.9);
+    --text: #f8fafc;
+    --item-bg: #1e293b;
+    --primary: #38bdf8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s; }
+
+body { 
+    background: var(--bg);
+    min-height: 100vh; display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+}
+/* Is code ko dhoondh kar replace karein */
+.glass-card {
+    background: var(--glass);
+    width: 100%; 
+    max-width: 1200px; 
+    height: 95vh; 
+    padding: 50px;
+    border-radius: 82px; 
+    box-shadow: 0 110px 110px rgba(0,0,0,0.5);
+    display: grid; 
+    grid-template-columns: 420px 1fr; /* Is line ko check karein, gap set karega */
+    gap: 80px; /* Sidebar aur list ke beech ka gap */
+}
+
+.left-sidebar {
+    position: sticky;
+    top: 20px; /* Scroll karte waqt thoda gap rahe upar se */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+    gap: 10px;
+    text-align: left; /* Sab kuch left align karne ke liye */
+}
+
+/* Stats ko tight karne ke liye */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+    padding-right: 20px; /* Scrollbar ke liye thoda space */
+}
+
+.left-sidebar { display: flex; flex-direction: column; gap: 20px;
+align-items: flex-start !important;
+text-align: left !important;
+padding-left: 0 !important;
+border-right: 1px solid rgba(0,0,0,0.05);
+
+}
+
+h1 {
+     font-size: 24px;
+      font-weight: 800; 
+      color: #1e293b;
+      margin: 0;
+}
+.stats-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+}
+
+.stat-item {
+    flex: 1 1 calc(45% - 10px) !important;
+    min-width: 110px !important;
+    min-height: 85px !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1.5px solid rgba(99, 102, 241, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px) !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1) !important;
+}
+
+.stat-item span {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #6366f1 !important;
+    line-height: 1 !important;
+}
+
+.stat-item p {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    margin-top: 6px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.stat-item span {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.stat-item p {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-box { background: var(--item-bg); padding: 10px; border-radius: 20px; }
+input { 
+    width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #e2e8f0; 
+    margin-bottom: 8px; background: var(--bg); color: var(--text);
+ input[type="text"], input[type="datetime-local"] {
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 8px  !important;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #6366f1 !important; /* Click karne par Indigo border chamkega */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}   
+}
+
+#add-btn {
+    width: 100%; padding: 12px; border: none; border-radius: 12px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white; font-weight: 700; cursor: pointer;
+}
+
+.scroll-area { overflow-y: auto; padding-right: 10px; }
+
+li {
+    background: var(--item-bg); padding: 20px; border-radius: 20px; margin-bottom: 15px;
+    border-left: 6px solid var(--primary); list-style: none;
+}
+
+.task-header {
+     display: flex;
+      justify-content: space-between;
+       align-items: center;
+        margin-bottom: 80px;
+     }
+.task-title { font-size: 38px; font-weight: 700; color: var(--text); }
+
+/* No Line Cut (Text Decoration None) */
+.completed { 
+    border-left: 6px solid #22c55e !important; /* Green border for finished tasks */
+    background: #f0fdf4; 
+}
+.task-title { text-decoration: none !important; opacity: 0.8; }
+
+.status-success { color: #22c55e; font-size: 12px; font-weight: 700; }
+.time-info { font-size: 12px; color: #64748b; }
+.btns i { font-size: 32px; cursor: pointer; margin-left: 5px; }
+.fa-check-circle { color: #22c55e; }
+/* Live Indicator wapas laane ke liye */
+.live-indicator {
+    display: inline-block !important;
+    -webkit-text-fill-color: #ef4444 !important;
+    font-size: 10px;
+    background: #fee2e2;
+    color: #ef4444;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker { 50% { opacity: 0.3; } }
+
+/* My Tasks aur Moon icon ko ek line mein laane ke liye */
+.header-top {
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-left: 0 !important;
+    padding-left: 0 !important; /* Extra gap hatane ke liye */
+
+}
+
+.main-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding-left: 0 !important; /* Extra gap hatane ke liye */
+    margin-left: -35px !important; /* Isse heading thoda aur left side (kinare) khisak jayegi */
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(to right,#1e293b, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Jo task abhi poore karne hain unka style */
+.task-item.pending {
+    border-left: 6px solid #6366f1  !important; /* Indigo Blue border */
+    background: #eef2ff;
+  .task-item {
+    /* Purana background rehne dein */
+    border: 1px solid rgba(99, 102, 241, 0.2) !important; /* Light Indigo border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-left: 5px solid #6366f1 !important; /* Left side mein ek thick professional line */
+}
+
+.task-item:hover {
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.1);
+}   /* Halka indigo background */
+}
+
+.status-pending {
+    color: #4f46e5;
+    font-size: 30px;
+    font-weight: 700;
+}
+.main-title {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #1e293b, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.main-title i {
+    font-size: 30px;
+    color: #6366f1;
+    filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.3));
+}
+/* Glassmorphism Effect for Task Items */
+.task-item {
+    background: rgba(255, 255, 255, 0.7) !important; /* Halka transparent white */
+    backdrop-filter: blur(12px); /* Dhundhla effect (Glass look) */
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(155, 155, 155, 0.2) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    margin-bottom: 12px !important;
+    background: #ffffff !important; /* Light mode ke liye */
+    border: 1px solid rgba(99, 102, 241, 0.15) !important; /* Soft Indigo border */
+    border-left: 8px solid #6366f1 !important; /* Left thick line */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}/* Glassmorphism for Dark and Light mode */
+.task-item {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 20px !important;
+}
+
+.dark-mode .task-item {
+    background: rgba(30, 41, 59, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode #pie-chart div {
+    background: #1e293b !important; /* Dark mode mein circle ke andar ka color */
+    border: 4px solid #f1f5f9;
+}
+
+.dark-mode #progress-text {
+    color: white !important;
+}
+/* --- BRIGHT MODE PREMIUM FIX --- */
+body:not(.dark-mode) .task-item {
+    background: #ffffff !important;
+    border: 1px solid rgba(99, 102, 241, 0.15) !important; /* Soft Indigo border */
+    border-left: 6px solid #6366f1 !important; /* Left thick line */
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.05) !important;
+    border-radius: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+body:not(.dark-mode) .stat-item {
+    background: linear-gradient(145deg, #ffffff, #f1f5f9) !important;
+    border: 1px solid rgba(99, 102, 241, 0.1) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+body:not(.dark-mode) input {
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    color: #1e293b !important;
+}
+
+body:not(.dark-mode) input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+body:not(.dark-mode) .glass-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(99, 102, 241, 0.1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04) !important;
+}
+/* --- PREMIUM DASHBOARD UI FIX --- */
+
+/* 1. Pura Background thoda sa change (taki white cards alag dikhein) */
+body:not(.dark-mode) {
+    background-color: #f3f4f6 !important; /* Halka grey background */
+}
+
+/* 2. Main Card ko "Glass" look dena */
+body:not(.dark-mode) .glass-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 3. Task Items ko "Elevated" banana (Utha hua look) */
+body:not(.dark-mode) .task-item {
+    background: #ffffff !important;
+    border: 1px solid rgba(99, 102, 241, 0.1) !important;
+    border-left: 8px solid #6366f1 !important; /* Moti Blue Line */
+    border-radius: 20px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover karne par Task Card chamkega */
+body:not(.dark-mode) .task-item:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1) !important;
+    border-color: rgba(99, 102, 241, 0.4) !important;
+}
+
+/* 4. Stats Buttons (Today, Week...) ko Colorful gradient borders dena */
+body:not(.dark-mode) .stat-item {
+    background: #ffffff !important;
+    border: 2px solid #f1f5f9 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+body:not(.dark-mode) .stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #6366f1, #a855f7); /* Choti gradient line niche */
+}
+
+/* 5. Pie Chart Container ko sundar banana */
+.productivity-circle-container {
+    background: rgba(99, 102, 241, 0.03);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px dashed rgba(99, 102, 241, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* --- THE FINAL FIX --- */
+
+/* 1. Main Glass Card ko flexible banaiye */
+.glass-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    min-height: 90vh !important;
+    padding: 20px !important;
+    gap: 20px !important;
+}
+
+/* 2. Left Sidebar ko fixed width aur scroll se bachaiye */
+.left-sidebar {
+    flex: 0 0 350px !important; /* Sidebar ki width fix kar di */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    height: auto !important;
+    position: sticky !important;
+    top: 10px !important;
+}
+
+/* 3. Task List (Right Side) ko scrollable banaiye */
+#todo-list, .scroll-area {
+    flex: 1 !important;
+    max-height: 80vh !important; /* Screen se bahar nahi jayega */
+    overflow-y: auto !important;
+    padding-right: 15px !important;
+}
+
+/* 4. Input Box ko sidebar ke andar set karein */
+.input-box {
+    background: rgba(255, 255, 255, 0.6) !important;
+    padding: 10px !important;
+    border-radius: 15px !important;
+    border: 1px dashed #6366f1 !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+}
+
+/* Scrollbar ko patla aur sundar banayein taaki ganda na lage */
+#todo-list::-webkit-scrollbar {
+    width: 5px;
+}
+#todo-list::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 10px;
+}
+/* --- DARK MODE TEXT CLARITY FIX --- */
+
+.dark-mode {
+    --text-primary: #f8fafc; /* Bright silver white */
+    --text-secondary: #94a3b8; /* Muted slate grey */
+}
+
+/* Titles aur Headings ke liye */
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode .task-title, 
+.dark-mode #progress-text {
+    color: var(--text-primary) !important;
+}
+
+/* Deadline aur small details ke liye */
+.dark-mode p, 
+.dark-mode .time-info p, 
+.dark-mode span, 
+.dark-mode label {
+    color: var(--text-secondary) !important;
+}
+
+/* Goal Dashboard title ka gradient dark mode ke liye chamkila banayein */
+.dark-mode .main-title {
+    background: linear-gradient(to right, #fff, #818cf8) !important;
+    -webkit-background-clip: text !important;
+        background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Input boxes ke andar ka text white karne ke liye */
+.dark-mode input {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Pie Chart ke andar ka "DONE" text fix karein */
+.dark-mode #pie-chart div span {
+    color: #1e293b; /* Isse circle ke andar ka text dark hi rakhein agar circle white hai */
+}
+/* Agar circle dark mode mein dark ho jata hai, toh ise white kar dein: */
+.dark-mode #pie-chart div {
+    background: #38bdf8 !important;
+}
+.dark-mode #progress-text {
+    color: #f8fafc !important;
+}
+.stats-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+}
+
+.stat-item {
+    background: white !important;
+    padding: 15px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    min-height: 80px !important;
+}
+
+.stat-item span {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #6366f1 !important;
+}
+
+.stat-item p {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    margin-top: 5px !important;
+}
+/* --- COMPACT LAYOUT FIX --- */
+
+/* 1. Sidebar ka gap kam karein */
+.left-sidebar {
+    gap: 5px !important;
+    padding-top: 5px !important;
+}
+
+/* 2. Heading aur Date ka margin kam karein */
+.main-title { margin-bottom: 0 !important; font-size: 20px !important; }
+#current-date { margin: 2px 0 10px 0 !important; font-size: 12px !important; }
+
+/* 3. Productivity Circle ka container chota karein */
+.productivity-circle-container {
+    margin: 5px 0 !important;
+}
+.productivity-circle-container p {
+    margin-bottom: 5px !important; /* "Productivity Score" text ke niche ka gap */
+}
+
+/* 4. Stats Boxes (Today/Week) ko thoda pichkayein */
+.stats-container {
+    margin: 10px 0 !important;
+    gap: 8px !important;
+}
+.stat-item {
+    min-height: 65px !important; /* Height 80 se 65 kar di */
+    padding: 8px !important;
+}
+
+/* 5. Quote Box ko patla karein */
+#quote-container {
+    margin: 8px 0 !important;
+    padding: 8px !important;
+}
+
+/* 6. Input Box (Goal Section) ka gap kam karein */
+.input-box {
+    padding: 10px !important;
+}
+.input-box input, .input-box select {
+    margin-bottom: 6px !important;
+    padding: 8px !important;
+}
+/* --- HEATMAP STYLING --- */
+#heatmap-grid div {
+    width: 100% !important;
+    height: 18px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+#heatmap-grid div:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    cursor: pointer;
+}

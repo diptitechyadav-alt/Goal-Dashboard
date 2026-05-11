@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipti's Goal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>   
+</head>
+
+<body>
+    <div class="glass-card">
+
+        <div class="left-sidebar">
+            <header>
+                <div class="header-top"
+                    style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <h1 class="main-title">
+                        <i class="fas fa-rocket"></i> Goal Dashboard <span class="live-indicator">LIVE</span>
+                    </h1>
+                  <button onclick="toggleTheme()" style="background:none; border:none; cursor:pointer; font-size:24px;">🌙</button>
+    </div>
+</header>
+
+<p id="current-date" style="margin: 10px 0; color: #64748b; font-size: 14px; text-align: left; font-weight: 600;"></p>
+
+<div class="productivity-circle-container" style="text-align: center; margin: 20px 0; width: 100%;">
+    <p style="font-size: 12px; font-weight: 800; color: #64748b; margin-bottom: 15px; text-transform: uppercase;">Productivity Score</p>
+    <div class="pie-chart" id="pie-chart" style="margin: 0 auto; position: relative; width: 100px; height: 100px; border-radius: 50%; background: #e2e8f0;">
+        <div style="position: absolute; width: 80px; height: 80px; top: 10px; left: 10px; background: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <span id="progress-text" style="font-size: 18px; font-weight: 800; color: #1e293b;">0%</span>
+            <span style="font-size: 8px; color: #94a3b8; font-weight: 600;">DONE</span>
+        </div>
+    </div>
+</div>
+
+<div id="quote-container" style="margin: 15px 0; padding: 12px; background: rgba(99, 102, 241, 0.08); border-radius: 15px; border-left: 4px solid #6366f1; text-align: left;">
+    <p id="quote-text" style="font-size: 11px; font-style: italic; color: #475569; margin: 0; line-height: 1.4; font-weight: 500;"></p>
+    <small id="quote-author" style="display: block; margin-top: 5px; font-size: 9px; font-weight: 700; color: #6366f1;"></small>
+</div>
+            </header>
+
+            <div class="stats-container">
+                <div class="stat-item" onclick="filterTasks('today')">
+                    <span id="day-count">0</span>
+                    <p>Today</p>
+                </div>
+                <div class="stat-item" onclick="filterTasks('week')">
+                    <span id="week-count">0</span>
+                    <p>Week</p>
+                </div>
+                <div class="stat-item" onclick="filterTasks('month')">
+                    <span id="month-count">0</span>
+                    <p>Month</p>
+                </div>
+                <div class="stat-item" onclick="refreshUI()">
+                    <span><i class="fas fa-list"></i></span>
+                    <p>All</p>
+                </div>
+          <div id="heatmap-container" style="margin-top: 15px; margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.5); border-radius: 18px; border: 1px solid rgba(99, 102, 241, 0.1);">
+    <p style="font-size: 10px; font-weight: 800; color: #64748b; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">🔥 Activity (Last 7 Days)</p>
+    <div id="heatmap-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
+        </div>
+    <p id="activity-status" style="font-size: 9px; margin-top: 6px; color: #6366f1; font-weight: 700; text-align: center;"></p>
+</div>
+  </div>
+            <div class="input-box">
+                <input type="text" id="todo-input" placeholder="What's your next big goal?">
+               <select id="category-input" style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 12px; border: 1.5px solid #e2e8f0; background: white; font-size: 13px; font-weight: 600; color: #475569; cursor: pointer;">
+    <option value="General">📁 General Task</option>
+    <option value="Coding">💻 Coding / Tech</option>
+    <option value="College">🎓 College / Study</option>
+    <option value="Personal">🏠 Personal Goal</option>
+</select> 
+                <div class="deadline-row">
+                    <input type="datetime-local" id="deadline-input">
+                    <button onclick="addTask()" id="add-btn">
+                        <i class="fas fa-plus"></i> Add New Goal
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="scroll-area">
+            <ul id="todo-list"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+   <audio id="success-sound" src="https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3"></audio>
+
+</body>
+</html> 
