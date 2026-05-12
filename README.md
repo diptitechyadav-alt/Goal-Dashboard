@@ -1,40 +1,43 @@
 # 🚀 Smart Goal Dashboard | AI-Inspired Productivity Tool
 
-Ek advanced aur aesthetically pleasing Goal Tracking Dashboard jo maine apni **B.Tech (Computer Science - AI)** studies aur daily coding tasks ko manage karne ke liye banaya hai.
+An advanced and aesthetically pleasing Goal Tracking Dashboard designed to streamline academic and coding workflows for **B.Tech (Computer Science - AI)** students.
 
 ---
 
-## ✨ Features (Kyoon Ye Dashboard Khaas Hai?)
+## ✨ Key Features (Why This Dashboard Stands Out)
 
-* **🔥 7-Day Activity Heatmap:** Har din ki productivity track karne ke liye GitHub-style heatmap.
-* **🎯 AI Focus Mode:** Coding karte waqt background blur karein aur 100% focus goals par rakhein.
-* **🏷️ Smart Categorization:** Tasks ko *Coding, College, ya Personal* tags mein divide karne ki suvidha.
-* **🎉 Celebration System:** Goal poora hone par "Confetti" celebration aur professional "Success Sound".
-* **⏳ Real-time Status Tracking:** Automatic badges jo batate hain ki task **In Progress** hai ya **Deadline Missed**.
-* **🌓 Dark/Light Mode:** Aapki eyes ke comfort ke hisaab se theme toggle.
+* **🔥 7-Day Activity Heatmap:** Visualize daily productivity streaks with a GitHub-style activity grid.
+* **🎯 AI-Focus Mode:** Stay focused during coding sessions with a glassmorphism blur effect that eliminates distractions.
+* **🏷️ Smart Categorization:** Effortlessly organize tasks using custom tags like *Coding, College, and Personal*.
+* **🎉 Celebration System:** Stay motivated with animated confetti and professional success sounds upon goal completion.
+* **⏳ Real-time Status Tracking:** Automated badges that monitor **In Progress** tasks and alert for **Missed Deadlines**.
+* **🌓 Adaptive Themes:** Toggle between Dark and Light modes for optimized visual comfort during long study hours.
 
 ---
 
-## 🛠️ Tech Stack (Maine Kya Use Kiya?)
+## 🛠️ Tech Stack (Tools Used)
 
-* **HTML5 & CSS3:** Modern "Glassmorphism" design ke liye.
-* **JavaScript (ES6+):** Dynamic UI aur complex task logic ke liye.
-* **Canvas Confetti API:** Visual rewards aur celebrations ke liye.
-* **LocalStorage:** Isse aapka data kabhi delete nahi hoga (Refresh karne par bhi).
+* **HTML5 & CSS3:** Leveraged for a modern "Glassmorphism" UI/UX design.
+* **JavaScript (ES6+):** Powering the dynamic UI and complex task management logic.
+* **Canvas Confetti API:** Integrated for interactive visual rewards and celebrations.
+* **LocalStorage:** Ensures data persistence, so your goals are never lost on browser refresh.
 
 ---
 
 ## 🚀 How to Use?
 
-1. Apne goal ka naam likhein (e.g., "Complete Python Basics").
-2. Category aur Deadline select karein.
-3. **Add Goal** par click karein.
-4. Goal poora hone par **Checkmark** dabayein aur celebration enjoy karein!
+1. Enter your goal name (e.g., "Complete Python Basics").
+2. Select the appropriate Category and set a Deadline.
+3. Click on **Add Goal**.
+4. Once the goal is achieved, click the **Checkmark** to enjoy the celebration!
 
 ---
 
 ## 👩‍💻 About Me
-Main **Dipti**, ek First Year B.Tech student hoon (CSE-AI). Mujhe autonomous business tools aur agentic AI par kaam karna pasand hai.
+I am **Dipti**, a First-Year B.Tech student majoring in **Computer Science Engineering (AI)**. I am passionate about building autonomous business tools and exploring the world of Agentic AI.
 
 ---
 *Developed with ❤️ by Dipti*
+
+
+
